@@ -2,21 +2,21 @@
 require 'Mandrill.php';
 
 try {
-    $mandrill = new Mandrill('HG3g83OBxAJZbaP-MYMHlQ');
+    $mandrill = new Mandrill('API-KEY');
     $message = array(
         'html' => '<p>Example HTML content</p>',
         'text' => 'Example text content',
         'subject' => 'example subject',
-        'from_email' => 'jaladhi.trivedi@indianic.com',
-        'from_name' => 'Jaladhi Trivedi',
+        'from_email' => 'from@gmail.com',
+        'from_name' => 'From Name',
         'to' => array(
             array(
-                'email' => 'inquiry@citiflite.com',
-                'name' => 'Inquiry',
+                'email' => 'To@gmail.com',
+                'name' => 'To Name',
                 'type' => 'to'
             )
         ),
-        'headers' => array('Reply-To' => 'inquiry@citiflite.com')
+        'headers' => array('Reply-To' => 'reply@gmail.com')
     );
     $async = false;
     $result = $mandrill->messages->send($message, $async);
